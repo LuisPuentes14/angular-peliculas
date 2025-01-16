@@ -4,11 +4,10 @@ import { ListadoGenericosComponent } from "../../compartidos/componentes/listado
 import { MatButtonModule } from "@angular/material/button";
 
 @Component({
-  selector: 'app-listado-peliculas',
-  standalone: true,
-  imports: [DatePipe, UpperCasePipe, CurrencyPipe, ListadoGenericosComponent, MatButtonModule],
-  templateUrl: './listado-peliculas.component.html',
-  styleUrl: './listado-peliculas.component.css'
+    selector: 'app-listado-peliculas',
+    imports: [DatePipe, UpperCasePipe, CurrencyPipe, ListadoGenericosComponent, MatButtonModule],
+    templateUrl: './listado-peliculas.component.html',
+    styleUrl: './listado-peliculas.component.css'
 })
 export class ListadoPeliculasComponent implements OnInit {
   ngOnInit(): void {   
