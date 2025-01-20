@@ -1,5 +1,13 @@
-<h2> En Cines</h2>
-<app-listado-peliculas [peliculas]="peliculasEnCines"> </app-listado-peliculas>
+<app-menu></app-menu>
 
-<h2>Proximos estrenos</h2>
-<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"> </app-listado-peliculas>
+<div class="contenedor">
+    <h2> En Cines dd</h2>
+
+    <app-rating [maximoRating]="5" (votado)="procesarVotado($event)"></app-rating>
+
+    <app-listado-peliculas [peliculas]="peliculasEnCines"> </app-listado-peliculas>
+
+    <h2>Proximos estrenos</h2>
+    <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"> </app-listado-peliculas>
+
+</div>
