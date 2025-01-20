@@ -1,42 +1,35 @@
 <h2> Datos de la pelicula</h2>
 
-<button (click)="agregarPelicula()">Agregar Pelicula</button>
-
 <app-listado-genericos [listado]="peliculas">
 
   <ng-container contenido>
+    <div class="peliculas-contenedor">
 
-    @for (pelicula of peliculas; track $index) {
+      @for (pelicula of peliculas; track $index) {
 
-    <div class="contenedor-pelicula">
+        <div class="pelicula-contenedor">      
+            <a>
+              @if(pelicula.poster){
+              <img [src]="pelicula.poster" width="169" height="250" />
+              }
+              @else
+              {
+              <img src="default.jpg" width="169" height="250" />
+              }
+    
+            </a>
 
-      <div style="display: flex; flex-direction: row; gap: 10px;">
+            <p> 
+              <a >{{pelicula.titulo}} </a>
+            </p>
+    
+            <div>
 
-        <div>
-          @if(pelicula.poster){
-          <img [src]="pelicula.poster" width="169" height="250" />
-          }
-          @else
-          {
-          <img src="default.jpg" width="169" height="250" />
-          }
-
+              <a mat-flat-button> Editar</a>
+              <button mat-flat-button type="button" color="war">Borrar</button>       
+            </div>
         </div>
-
-        <div>
-          <p>{{$index}}) Pelicula: {{pelicula.titulo}}</p>
-          <p> Fecha de lanzamiento: {{pelicula.fechaLanzamiento |date:"dd-MMMM-yyyy" | uppercase}}</p>
-          <p> Precio: {{pelicula.precio |currency}}</p>
-          <button mat-flat-button (click)="eliminarPelicula(pelicula)">Eliminar Pelicula</button>
-        </div>
-
-      </div>
-
+        }
     </div>
-
-    }
-
   </ng-container>
-
-
 </app-listado-genericos>
